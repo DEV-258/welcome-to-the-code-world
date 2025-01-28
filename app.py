@@ -4,12 +4,11 @@ import pickle as pk
 import streamlit as st
 
 import pickle as pk
-with open('model.pkl', 'rb') as file:
-    model = pk.load(file)
 
 
-#model = pk.load(open('model.pkl','rb'))
-
+model = pk.load(open('model.pkl','rb'))
+with open('model.pkl', 'wb') as file:
+    pk.dump(model, file)
 st.header('Car Price Prediction ML Model')
 
 cars_data = pd.read_csv('Cardetails.csv')
