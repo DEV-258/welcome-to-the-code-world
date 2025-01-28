@@ -3,7 +3,12 @@ import numpy as np
 import pickle as pk 
 import streamlit as st
 
-model = pk.load(open('model.pkl','rb'))
+import pickle as pk
+with open('model.pkl', 'rb') as file:
+    model = pk.load(file)
+
+
+#model = pk.load(open('model.pkl','rb'))
 
 st.header('Car Price Prediction ML Model')
 
